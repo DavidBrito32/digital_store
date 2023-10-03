@@ -1,0 +1,252 @@
+/* eslint-disable no-unused-vars */
+import { styled } from "styled-components";
+import tenis1 from "./assets/Caroussel/Tenis1.png";
+import tenis2 from "./assets/Caroussel/Tenis2.png";
+import tenis3 from "./assets/Caroussel/Tenis3.png";
+import { useState } from "react";
+
+const Caroussel = () => {
+  const [itemAtivo, setItemAtivo] = useState(0);
+
+  const banners = [
+    {
+      supTitle: "Melhores ofertas personalizadas",
+      title: "Queima de estoque Nike",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aspernatur suscipit, eveniet officia.",
+      buttonText: "Ver ofertas",
+      image: tenis1,
+    },
+    {
+      supTitle: "Melhores ofertas personalizadas",
+      title: "Leve o seu agora",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aspernatur suscipit, eveniet officia.",
+      buttonText: "Ver ofertas",
+      image: tenis2,
+    },
+    {
+      supTitle: "Melhores ofertas personalizadas",
+      title: "Melhor de todos",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aspernatur suscipit, eveniet officia.",
+      buttonText: "Ver ofertas",
+      image: tenis3,
+    },
+    {
+      supTitle: "Melhores ofertas personalizadas",
+      title: "Melhor de todos",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aspernatur suscipit, eveniet officia.",
+      buttonText: "Ver ofertas",
+      image: tenis3,
+    },
+    {
+      supTitle: "Melhores ofertas personalizadas",
+      title: "Melhor de todos",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aspernatur suscipit, eveniet officia.",
+      buttonText: "Ver ofertas",
+      image: tenis3,
+    },
+    {
+      supTitle: "Melhores ofertas personalizadas",
+      title: "Melhor de todos",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aspernatur suscipit, eveniet officia.",
+      buttonText: "Ver ofertas",
+      image: tenis3,
+    },
+  ];
+
+  return (
+    <>
+      <CarousselContainer>
+        <CarousselItems $slide={itemAtivo} $largura={banners.length}>
+          {banners.map((banner, index) => (
+              <CarousselItem key={index}>
+                <CarousselContent>
+                  <CarousselSupTitle>
+                    {banner.supTitle}
+                  </CarousselSupTitle>
+
+                  <CarousselTitle>{banner.title}</CarousselTitle>
+
+                  <CarousselDescription>
+                    {banner.description}
+                  </CarousselDescription>
+
+                  <CarousselButton>{banner.buttonText}</CarousselButton>
+                </CarousselContent>
+                <CarousselImage src={banner.image} />
+              </CarousselItem>
+          ))}
+        </CarousselItems>
+        <CarousselPagination>
+          {banners.map((item, index) => 
+            (<CarousselPaginationPill
+              key={index} 
+              className={itemAtivo === index ? "active" : ""}
+              onClick={() => setItemAtivo(index)}
+            />              
+            ))
+          }
+        </CarousselPagination>
+      </CarousselContainer>
+    </>
+  );
+};
+
+const CarousselContainer = styled.div`
+  //---------VARIAVEIS---------------
+  --Yellow: #f6aa1c;
+  --DarkGray: #1f1f1f;
+  --DarkGray2: #474747;
+  --Pink: #c92071;
+  --PinkHover: #991956;
+  --LightGray: #f5f5f5;
+  --LightGray2: #cccccc;
+  --letter-spacing: 0.75px;
+  //---------------------------------
+  position: relative;
+  background-color: var(--LightGray);
+  padding: 80px 0;
+  overflow: hidden;
+`;
+
+const CarousselItems = styled.div`
+  display: flex;
+  width: calc(100vw * ${(props) => props.$largura || 1});
+  position: relative;
+  left: calc(-100vw * ${(props) => props.$slide || 0});
+  transition-duration: 400ms;
+`;
+
+const CarousselItem = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 0 100px;
+  width: 100vw;
+
+  @media only screen and (max-width: 768px){
+      flex-direction: column-reverse;
+      padding: 0 30px;
+    }
+
+  
+`;
+
+const CarousselContent = styled.div`
+  width: 45%;
+  @media only screen and (max-width: 768px){
+      width: 100%;
+      margin: 30px 0;
+    }
+`;
+
+const CarousselSupTitle = styled.h6`
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: var(--letter-spacing);
+  color: var(--Yellow);
+
+    
+  @media only screen and (max-width: 768px){
+      font-size: 14px;
+      letter-spacing: none;
+      text-align: center;
+      color: var(--Pink);
+      margin-top: 10px;
+    }
+`;
+
+const CarousselTitle = styled.h2`
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 66px;
+  color: var(--DarkGray);
+  margin: 20px 0;
+
+  @media only screen and (max-width: 768px){
+      font-size: 40px;
+      text-align: center;
+      line-height: 50px;
+    }
+`;
+
+const CarousselDescription = styled.p`
+  font-size: 18px;
+  line-height: 34px;
+  letter-spacing: var(--letter-spacing);
+  color: var(--DarkGray2);
+  margin-bottom: 40px;
+
+  
+  @media only screen and (max-width: 768px){
+      width: 100%;
+      font-size: 14px;
+    }
+`;
+
+const CarousselButton = styled.button`
+  width: 220px;
+  height: 48px;
+  border-radius: 5px;
+  background-color: var(--Pink);
+  color: var(--LightGray);
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing);
+  cursor: pointer;
+  transition-duration: 200ms;
+  &:hover {
+    background-color: var(--PinkHover);
+  }
+
+    
+  @media only screen and (max-width: 768px){
+      width: 100%;
+    }
+`;
+
+const CarousselImage = styled.img`
+  transform: rotate(-10deg);
+  flex: 1;
+  object-fit: none;
+
+  @media only screen and (max-width: 768px){
+      width: 80vw;
+      margin: 0 auto;
+      flex: none;
+      display: block;
+      object-fit: contain;
+    }
+`;
+
+const CarousselPagination = styled.div`
+  display: flex;
+  gap: 16px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+`;
+
+const CarousselPaginationPill = styled.div`
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--LightGray2);
+  transition: all ease 200ms;
+  cursor: pointer;
+
+  &.active {
+    background-color: var(--Pink);
+  }
+
+  &:active {
+    scale: 0.9;
+  }
+`;
+
+export default Caroussel;
