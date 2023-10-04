@@ -112,6 +112,10 @@ const CarousselContainer = styled.div`
   background-color: var(--LightGray);
   padding: 80px 0;
   overflow: hidden;
+
+  @media only screen and (max-width: 480px){
+    overflow-x: initial;
+  }
 `;
 
 const CarousselItems = styled.div`
