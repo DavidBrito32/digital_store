@@ -128,10 +128,15 @@ const CarousselItem = styled.div`
   padding: 0 100px;
   width: 100vw;
 
-  @media only screen and (max-width: 768px){
+  @media only screen and (max-width: 480px){
       flex-direction: column-reverse;
-      padding: 0 30px;
+      padding: 0 10px;
     }
+  
+    @media only screen and (min-width: 480px) and (max-width: 768px) {
+    padding: 0 10px;
+  }
+
 
   
 `;
@@ -152,7 +157,7 @@ const CarousselSupTitle = styled.h6`
   color: var(--Yellow);
 
     
-  @media only screen and (max-width: 768px){
+  @media only screen and (max-width: 480px){
       font-size: 14px;
       letter-spacing: none;
       text-align: center;
@@ -168,10 +173,14 @@ const CarousselTitle = styled.h2`
   color: var(--DarkGray);
   margin: 20px 0;
 
-  @media only screen and (max-width: 768px){
+  @media only screen and (max-width: 480px){
       font-size: 40px;
       text-align: center;
       line-height: 50px;
+    }
+
+    @media only screen and (min-width: 480px) and (max-width: 1024px){
+      font-size: 50px;
     }
 `;
 
@@ -214,13 +223,23 @@ const CarousselImage = styled.img`
   flex: 1;
   object-fit: none;
 
-  @media only screen and (max-width: 768px){
+  @media only screen and (max-width: 480px){
       width: 80vw;
       margin: 0 auto;
       flex: none;
       display: block;
       object-fit: contain;
     }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px){
+    width: 50vw;
+    object-fit: contain;
+  }
+
+  @media only screen and (min-width: 769px) and (max-width: 1024px){
+    width: 50vw;
+    object-fit: contain;
+  }
 `;
 
 const CarousselPagination = styled.div`

@@ -469,7 +469,7 @@ const ContainerHeader = styled.header`
         position: absolute;
         bottom: -450px;
         left: 0;
-        z-index: 2;
+        z-index: 11;
       }
 
       & .btn {
