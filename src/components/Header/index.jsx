@@ -315,7 +315,7 @@ const ContainerHeader = styled.header`
         height: 40px;
         text-align: center;
         left: -50%;
-        bottom: -700px;
+        bottom: -600px;
         visibility: hidden;
         opacity: 0;
         transition-duration: 400ms;
@@ -332,7 +332,7 @@ const ContainerHeader = styled.header`
         height: 40px;
         text-align: center;
         left: -50%;
-        bottom: -750px;
+        bottom: -650px;
         visibility: hidden;
         opacity: 0;
         transition-duration: 400ms;
