@@ -152,7 +152,6 @@ const ContainerHeader = styled.header`
     gap: 16px;
     transition-duration: 400ms;
 
-
     & a {
       display: block;
       line-height: 40px;
@@ -364,9 +363,9 @@ const ContainerHeader = styled.header`
         visibility: visible;
         opacity: 1;
 
-          & ul{
-            width: 80%;
-          }
+        & ul {
+          width: 80%;
+        }
       }
 
       & ul {
@@ -527,9 +526,9 @@ const ContainerHeader = styled.header`
         visibility: visible;
         opacity: 1;
 
-          & ul{
-            width: 40%;
-          }
+        & ul {
+          width: 40%;
+        }
       }
 
       & ul {
