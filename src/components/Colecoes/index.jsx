@@ -5,11 +5,11 @@ import Tenis from "./assets/Tenis.svg";
 import HeadPhone from "./assets/Headphone.svg";
 import CardCategory from "./CardCategory";
 
-import camisaCategory from "./assets/camisa_category.svg";
-import Calcacategory from "./assets/Calca_category.svg";
-import Bone from "./assets/bone_category.svg";
-import AirPodsMax from "./assets/HeadPhone_category.svg";
-import TenisCategory from "./assets/tenis_Category.svg";
+import camisaCategory from "./assets/camisaCategory.svg";
+import Calcacategory from "./assets/CalcaCategory.svg";
+import Bone from "./assets/boneCategory.svg";
+import AirPodsMax from "./assets/HeadPhoneCategory.svg";
+import TenisCategory from "./assets/tenisCategory.svg";
 
 const Colecoes = () => {
   const colections = [
