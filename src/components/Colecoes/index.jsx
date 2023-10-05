@@ -8,7 +8,7 @@ import CardCategory from "./CardCategory";
 import camisaCategory from "./assets/camisaCategory.svg";
 import Calcacategory from "./assets/CalcaCategory.svg";
 import Bone from "./assets/boneCategory.svg";
-import AirPodsMax from "./assets/HeadPhoneCategory.svg";
+import AirPodsMax from "./assets/fone.svg";
 import TenisCategory from "./assets/tenisCategory.svg";
 
 const Colecoes = () => {
