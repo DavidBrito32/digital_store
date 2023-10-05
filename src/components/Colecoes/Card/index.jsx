@@ -27,10 +27,15 @@ const CardItems = styled.div`
   padding: 25px;
   overflow: hidden;
   background-color: var(--spacial-blue);
+  transition-duration: 250ms;
 
     @media only screen and (max-width: 480px){
       width: 95%;
       margin: 0 auto;
+    }
+
+    @media only screen and (min-width: 481px) and (max-width: 768px){
+      width: 45%;
     }
 `;
 
@@ -41,6 +46,16 @@ const TitleCard = styled.h2`
   letter-spacing: 0.99px;
   text-align: left;
   width: 52%;
+  z-index: 1;
+  transition-duration: 250ms;
+  
+    @media only screen and (max-width: 768px){
+      font-size: 28px;
+      letter-spacing: 2px;
+      line-height: 36px;
+      width: 60%;
+    }
+
 `;
 
 const Pill = styled.span`
@@ -48,6 +63,7 @@ const Pill = styled.span`
   height: 33px;
   border-radius: 29px;
   background-color: var(--YellowGreen);
+  transition-duration: 250ms;
 `;
 
 const PillTitle = styled.h3`
@@ -63,6 +79,7 @@ const PillTitle = styled.h3`
   width: 100%;
   height: 100%;
   color: var(--dark-gray-2);
+  transition-duration: 250ms;
 `;
 
 const CardButton = styled.button`
@@ -79,6 +96,7 @@ const CardButton = styled.button`
   background-color: var(--light-gray-3);
   z-index: 1;
   transition-duration: 200ms;
+  transition-duration: 250ms;
     &:active{
         scale: .97;
     }
@@ -95,6 +113,7 @@ const FigCard = styled.img`
     bottom: 0;
     right: 0;
     z-index: 0;
+    transition-duration: 250ms;
 `
 
 export default Card;

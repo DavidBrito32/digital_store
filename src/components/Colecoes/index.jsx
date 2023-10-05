@@ -27,7 +27,7 @@ const Colecoes = () => {
     },
     {
       id: 3,
-      title: "Novo Beats Bass",
+      title: `Novo Beats Bass`,
       discount: "20% OFF",
       image: HeadPhone,
     },
@@ -66,7 +66,8 @@ const ContainerColecao = styled.div`
   width: 100%;
   height: auto;
   overflow: hidden;
-  padding: 40px 100px;
+  padding: 40px 0px;
+  transition-duration: 250ms;
 
   @media only screen and (max-width: 768px) {
     padding: 0;
@@ -81,6 +82,18 @@ const SupTitle = styled.h3`
   text-align: ${(props) => props.$Talign || "left"};
   margin-top: ${(props) => props.$Mtop || 0};
   margin-bottom: 20px;
+  padding-left: 10%;
+  transition-duration: 250ms;
+
+    @media only screen and (max-width: 480px){
+      padding: 0 15px;
+      font-size: 16px;
+      text-align: left;
+    }
+
+    @media only screen and (min-width: 1600px){
+      padding-left: 18%;
+    }
 `;
 
 const CardsContainer = styled.div`
@@ -88,13 +101,10 @@ const CardsContainer = styled.div`
   height: auto;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   gap: 15px;
-
-  @media only screen and (max-width: 768px) {
-    padding: 0;
-    justify-content: center;
-  }
+  transition-duration: 250ms;
 `;
 
 const ContainerCategory = styled.div`
@@ -105,6 +115,7 @@ const ContainerCategory = styled.div`
   gap: 45px;
   align-items: center;
   overflow: hidden;
+  transition-duration: 250ms;
 
   @media only screen and (max-width: 480px) {
     width: 80%;
