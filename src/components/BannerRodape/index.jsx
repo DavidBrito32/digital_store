@@ -40,6 +40,7 @@ const ContainerBanner = styled.div`
     align-items: initial;
     height: auto;
     padding: 0 10px;
+    margin: 100px 0;
   }
 `;
 
@@ -68,8 +69,8 @@ const ContainerImage = styled.div`
 
   @media only screen and (max-width: 480px) {
     width: 100%;
-    margin-top: 50px;
     padding: 0 10px;
+    margin: 30px 0;
 
     &::after {
       content: "";
@@ -177,6 +178,7 @@ const Image = styled.img`
   @media only screen and (max-width: 480px) {
     width: 290px;
     height: 173px;
+
   }
 
   @media only screen and (min-width: 480px) and (max-width: 768px) {
