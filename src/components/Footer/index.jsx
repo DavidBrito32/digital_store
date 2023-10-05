@@ -120,6 +120,47 @@ const Rodape = styled.footer`
     position: absolute;
     bottom: 5%;
   }
+
+
+  @media only screen and (max-width: 768px){
+      padding: 10px;     
+
+      & .links{
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        margin-bottom: 50px;
+        
+        & section{
+        flex: none;
+        }
+
+        & .business{
+          margin-top: 50px;
+          width: 90%;
+            & h1{
+              font-size: 24px;
+
+                & img{
+                  width: 23px;
+                  height: 23px;
+                }
+            }
+
+            & p {
+              font-size: 14px;
+              font-weight: 500;
+            }
+        }
+
+        & .contact{
+          width: 100%;
+        }      
+      }
+
+  }
+
+
 `;
 
 const Footer = () => {

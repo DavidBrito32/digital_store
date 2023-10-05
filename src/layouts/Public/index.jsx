@@ -8,7 +8,7 @@ const LayoutPage = () => {
         <>
             <Header />
             <Outlet />
-            {/* <Footer /> */}
+            <Footer />
         </>
     )
 }

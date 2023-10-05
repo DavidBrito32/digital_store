@@ -19,6 +19,11 @@ export const Estilo =createGlobalStyle`
     --red: #EE4266;
     --dark-gray-2: #474747;
     --WARNING: #F6AA1C;
+    --YellowGreen:#E7FF86;
+    --light-gray-3: #F5F5F5;
+    --light-gray-3-hover: #ece9e9;
+    --spacial-blue: #D8E3F2;
+;
 
 
   }

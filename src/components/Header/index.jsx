@@ -315,7 +315,7 @@ const ContainerHeader = styled.header`
         height: 40px;
         text-align: center;
         left: -50%;
-        bottom: -430px;
+        bottom: -700px;
         visibility: hidden;
         opacity: 0;
         transition-duration: 400ms;
@@ -332,7 +332,7 @@ const ContainerHeader = styled.header`
         height: 40px;
         text-align: center;
         left: -50%;
-        bottom: -475px;
+        bottom: -750px;
         visibility: hidden;
         opacity: 0;
         transition-duration: 400ms;
@@ -347,9 +347,9 @@ const ContainerHeader = styled.header`
 
     & nav {
       width: 100%;
-      height: calc(100vh - 12.5vh);
+      height: calc(100vh - 3.3vh);
       position: absolute;
-      top: 5vh;
+      top: 3.3vh;
       left: 0;
       display: flex;
       justify-content: left;
@@ -480,7 +480,7 @@ const ContainerHeader = styled.header`
         height: 40px;
         text-align: center;
         left: -50%;
-        bottom: -430px;
+        bottom: -650px;
         visibility: hidden;
         opacity: 0;
         transition-duration: 400ms;
@@ -496,7 +496,7 @@ const ContainerHeader = styled.header`
         height: 40px;
         text-align: center;
         left: -50%;
-        bottom: -475px;
+        bottom: -700px;
         visibility: hidden;
         opacity: 0;
         transition-duration: 400ms;
@@ -510,9 +510,9 @@ const ContainerHeader = styled.header`
 
     & nav {
       width: 100%;
-      height: calc(100vh - 12.5vh);
+      height: calc(100vh - 3vh);
       position: absolute;
-      top: 5vh;
+      top: 3vh;
       left: 0;
       display: flex;
       justify-content: left;
