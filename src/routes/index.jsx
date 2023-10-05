@@ -10,6 +10,7 @@ const Ways = () => {
                 <Routes>
                     <Route path='/' element={<LayoutPage />}>
                         <Route index element={<HomePage />} />
+                        
                     </Route>
                 </Routes>
             </BrowserRouter>

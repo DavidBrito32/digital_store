@@ -1,3 +1,4 @@
+import BannerRodape from "../../components/BannerRodape";
 import Caroussel from "../../components/Caroussel";
 
 const HomePage = () => {
@@ -5,6 +6,7 @@ const HomePage = () => {
     return (
         <>
             <Caroussel />
+            <BannerRodape />
         </>
     )
 }

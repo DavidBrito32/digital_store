@@ -11,8 +11,11 @@ const ContainerHeader = styled.header`
   align-items: center;
   flex-wrap: wrap;
   padding: 30px 6.5rem;
-  position: relative;
+  position: sticky;
+  top: 0;
   transition-duration: 400ms;
+  z-index: 15;
+  background-color: white;
 
   & .Search_Oculto {
     display: none;

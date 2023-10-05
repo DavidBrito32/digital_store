@@ -17,6 +17,10 @@ export const Estilo =createGlobalStyle`
   :root{
     --pink: #c92071;
     --red: #EE4266;
+    --dark-gray-2: #474747;
+    --WARNING: #F6AA1C;
+
+
   }
 
 `;

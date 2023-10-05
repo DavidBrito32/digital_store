@@ -1,0 +1,1 @@
+/* Aquivo para declaração de coordenadas */
