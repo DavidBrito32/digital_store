@@ -17,9 +17,11 @@ export const Estilo =createGlobalStyle`
   :root{
     --pink: #c92071;
     --red: #EE4266;
+    --dark-gray: #1F1F1F;
     --dark-gray-2: #474747;
     --WARNING: #F6AA1C;
     --YellowGreen:#E7FF86;
+    --light-gray-2: #CCCCCC;
     --light-gray-3: #F5F5F5;
     --light-gray-3-hover: #ece9e9;
     --spacial-blue: #D8E3F2;

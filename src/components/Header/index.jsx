@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import cart from "./assets/Cart_items.svg";
 import "boxicons";
 import { useState } from "react";
+import Cart from "./Cart";
 
 const ContainerHeader = styled.header`
   width: 100%;
@@ -208,8 +209,15 @@ const ContainerHeader = styled.header`
   & .carrinho {
     position: relative;
     margin-left: 30px;
-    cursor: pointer;
     transition-duration: 400ms;
+    & img{
+      cursor: pointer;
+
+        &:active{
+          scale: 0.97;
+        }
+    }
+
     & span {
       position: absolute;
       line-height: 16px;
@@ -224,10 +232,6 @@ const ContainerHeader = styled.header`
       border-radius: 10px;
       text-align: center;
       color: white;
-    }
-
-    &:active {
-      scale: 0.97;
     }
   }
 
@@ -562,6 +566,10 @@ const ContainerHeader = styled.header`
 const Header = () => {
   const [burger, setBurguer] = useState(false);
   const [search, setSearch] = useState(false);
+  const [openCart, setOpenCart] = useState(false);
+
+  const openToCart = () => setOpenCart(!openCart);
+
   const alteraBurguer = () => {
     setBurguer(!burger);
     setSearch(false);
@@ -604,10 +612,11 @@ const Header = () => {
           <Link to="/login" className={burger ? "btn active" : "btn"}>
             Entrar
           </Link>
-          <div className="carrinho">
+          <div className="carrinho" onClick={openToCart}>
             <img src={cart} alt="carrinho" />
             <span>1</span>
           </div>
+            <Cart openCart={openCart} />
         </div>
         <nav className={burger ? "active" : ""}>
           <ul>
