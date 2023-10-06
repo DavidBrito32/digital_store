@@ -36,7 +36,7 @@ const ProductsList = styled.ul`
     }
 
     @media only screen and (max-width: 480px){
-        padding: 0 5px;
+        padding: 0;
     }
     @media only screen and (min-width: 480px) and (max-width: 768px){
         padding: 0 20px;
@@ -49,6 +49,10 @@ const Action = styled.h3`
   justify-content: space-between;
   align-items: center;
   color: var(--dark-gray-2);
+    @media only screen and (max-width: 480px){
+        font-size: 16px;
+        padding: 0 30px;
+    }
 `;
 
 const Ancor = styled.a`
@@ -59,6 +63,9 @@ const Ancor = styled.a`
   letter-spacing: 0.75px;
   text-align: left;
   color: var(--pink);
+  @media only screen and (max-width: 480px){
+        font-size: 16px;
+    }
 `;
 
 export default ProductsHome;

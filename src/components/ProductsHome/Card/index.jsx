@@ -31,11 +31,12 @@ const Product = styled.li`
   flex-direction: column;
 
     @media only screen and (max-width: 350px){
-        width: 100%;
+        width: 50%;
+        height: 300px;
     }
 
     @media only screen and (max-width: 480px){
-        width: 147px;
+        width: 175px;
         height: 310px;
     }
 `;
@@ -74,12 +75,19 @@ const Discount = styled.span`
   width: 96px;
   height: 32px;
   border-radius: 29px;
-  background-color: var(--WARNING);
+  background-color: var(--YellowGreen);
   color: var(--dark-gray-2);
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
   transition-duration: 400ms;
+
+    @media only screen and (max-width: 480px){
+        width: 80px;
+        height: 28px;
+        font-size: 14px;
+    }
 `;
 
 const Category = styled.h4`
