@@ -247,7 +247,7 @@ const ContainerHeader = styled.header`
     & .Search_Oculto {
       display: block;
       position: absolute;
-      right: 40px;
+      right: 55px;
       cursor: pointer;
 
       &:active {
@@ -391,7 +391,7 @@ const ContainerHeader = styled.header`
     & .carrinho {
       position: absolute;
       top: 50%;
-      right: 10px;
+      right: 20px;
       transform: translateY(-50%);
     }
   }
