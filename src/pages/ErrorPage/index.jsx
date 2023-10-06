@@ -9,7 +9,7 @@ const ErrorPage = () => {
             <ErrorContainer>
                 <ErrorText>
                     <ErrorTitle>Desculpe, a pagina solicitada foi removida ou pode estar em manutenção</ErrorTitle>
-                    <Link to={"/"}>Votlar a segurança</Link>
+                    <Link to={"/"}>Voltar a segurança</Link>
                 </ErrorText>
                 <ErrorImage></ErrorImage>
             </ErrorContainer>

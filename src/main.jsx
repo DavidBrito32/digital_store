@@ -21,6 +21,7 @@ export const Estilo =createGlobalStyle`
     --dark-gray-2: #474747;
     --WARNING: #F6AA1C;
     --YellowGreen:#E7FF86;
+    --light-gray: #8F8F8F;
     --light-gray-2: #CCCCCC;
     --light-gray-3: #F5F5F5;
     --light-gray-3-hover: #ece9e9;

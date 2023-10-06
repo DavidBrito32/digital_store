@@ -1,6 +1,7 @@
 import BannerRodape from "../../components/BannerRodape";
 import Caroussel from "../../components/Caroussel";
 import Colecoes from "../../components/Colecoes";
+import ProductsHome from "../../components/ProductsHome";
 
 const HomePage = () => {
 
@@ -8,6 +9,7 @@ const HomePage = () => {
         <>
             <Caroussel />
             <Colecoes />
+            <ProductsHome />
             <BannerRodape />
         </>
     )
