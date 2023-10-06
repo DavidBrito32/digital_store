@@ -568,15 +568,21 @@ const Header = () => {
   const [search, setSearch] = useState(false);
   const [openCart, setOpenCart] = useState(false);
 
-  const openToCart = () => setOpenCart(!openCart);
+  const openToCart = () => {
+    setOpenCart(!openCart);
+    setSearch(false);
+    setBurguer(false);
+  };
 
   const alteraBurguer = () => {
     setBurguer(!burger);
     setSearch(false);
+    setOpenCart(false);
   };
   const abrePesquisa = () => {
     setSearch(!search);
     setBurguer(false);
+    setOpenCart(false);
   };
 
   return (
