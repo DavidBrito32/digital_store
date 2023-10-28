@@ -16,6 +16,7 @@ export const Estilo =createGlobalStyle`
 
   :root{
     --pink: #c92071;
+    --dark-pink: #991956;
     --red: #EE4266;
     --dark-gray: #1F1F1F;
     --dark-gray-2: #474747;
@@ -26,9 +27,6 @@ export const Estilo =createGlobalStyle`
     --light-gray-3: #F5F5F5;
     --light-gray-3-hover: #ece9e9;
     --spacial-blue: #D8E3F2;
-;
-
-
   }
 
 `;

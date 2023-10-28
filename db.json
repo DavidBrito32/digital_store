@@ -1,0 +1,77 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Davi",
+      "email": "davi@email.com",
+      "password": "123456",
+      "keep_Logged": false
+    }
+  ],
+  "banners": [
+    {
+      "id": 1,
+      "supTitle": "Melhores ofertas personalizadas",
+      "title": "Queima de estoque Nike",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aspernatur suscipit, eveniet officia.",
+      "buttonText": "Ver ofertas",
+      "image": "tenis1"
+    },
+    {
+      "id": 2,
+      "supTitle": "Melhores ofertas personalizadas",
+      "title": "Leve o seu agora",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aspernatur suscipit, eveniet officia.",
+      "buttonText": "Ver ofertas",
+      "image": "tenis2"
+    },
+    {
+      "id": 3,
+      "supTitle": "Melhores ofertas personalizadas",
+      "title": "Melhor de todos",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aspernatur suscipit, eveniet officia.",
+      "buttonText": "Ver ofertas",
+      "image": "tenis3"
+    },
+    {
+      "id": 4,
+      "supTitle": "Melhores ofertas personalizadas",
+      "title": "Melhor de todos",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aspernatur suscipit, eveniet officia.",
+      "buttonText": "Ver ofertas",
+      "image": "tenis3"
+    },
+    {
+      "id": 5,
+      "supTitle": "Melhores ofertas personalizadas",
+      "title": "Melhor de todos",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aspernatur suscipit, eveniet officia.",
+      "buttonText": "Ver ofertas",
+      "image": "tenis3"
+    },
+    {
+      "id": 6,
+      "supTitle": "Melhores ofertas personalizadas",
+      "title": "Melhor de todos",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aspernatur suscipit, eveniet officia.",
+      "buttonText": "Ver ofertas",
+      "image": "tenis3"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Tênis Nike Revolution",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aspernatur suscipit, eveniet officia.",
+      "ref": "38416711",
+      "brand": "nike",
+      "type": "caasual",
+      "rate": 4.7,
+      "price": "219.00",
+      "sizes": "[39, 40, 41, 42, 43]",
+      "colors": "['#6fEEff', '#FF6969', '#5E5E5E', '#6D70B7']",
+      "reviws": 90
+    }
+  ],
+  "colections": []
+}

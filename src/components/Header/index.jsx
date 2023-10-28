@@ -2,8 +2,9 @@ import { styled } from "styled-components";
 import { Link, NavLink } from "react-router-dom";
 import cart from "./assets/Cart_items.svg";
 import "boxicons";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Cart from "./Cart";
+import { AuthContext } from "../../context/AuthContexto";
 
 const ContainerHeader = styled.header`
   width: 100%;
@@ -153,6 +154,22 @@ const ContainerHeader = styled.header`
     gap: 16px;
     transition-duration: 400ms;
 
+    & h3 {
+      font-size: 16px;
+      text-align: right;
+
+      & span {
+        display: block;
+        font-size: 14px;
+        color: #777777;
+        transition-duration: 200ms;
+        cursor: pointer;
+        &:hover {
+          color: var(--pink);
+        }
+      }
+    }
+
     & a {
       display: block;
       line-height: 40px;
@@ -210,12 +227,12 @@ const ContainerHeader = styled.header`
     position: relative;
     margin-left: 30px;
     transition-duration: 400ms;
-    & img{
+    & img {
       cursor: pointer;
 
-        &:active{
-          scale: 0.97;
-        }
+      &:active {
+        scale: 0.97;
+      }
     }
 
     & span {
@@ -585,6 +602,8 @@ const Header = () => {
     setOpenCart(false);
   };
 
+  const { userInfo, setUserInfo } = useContext(AuthContext);
+
   return (
     <>
       <ContainerHeader>
@@ -609,21 +628,36 @@ const Header = () => {
           <box-icon name="search"></box-icon>
         </div>
         <div className="acoes">
-          <Link
-            to="/cadastro"
-            className={burger ? "underline active" : "underline"}
-          >
-            Cadastre-se
-          </Link>
-          <Link to="/login" className={burger ? "btn active" : "btn"}>
-            Entrar
-          </Link>
+
+          {!userInfo.isLogged && (
+            <>
+              <Link
+                to="/cadastro"
+                className={burger ? "underline active" : "underline"}
+              >
+                Cadastre-se
+              </Link>
+              <Link to="/login" className={burger ? "btn active" : "btn"}>
+                Entrar
+              </Link>
+            </>
+          )}
+
           <div className="carrinho" onClick={openToCart}>
             <img src={cart} alt="carrinho" />
             <span>1</span>
           </div>
-            <Cart openCart={openCart} />
+
+          {userInfo.isLogged && (
+            <h3>
+              Olá {userInfo.name} 
+              <span onClick={() => setUserInfo({...userInfo, isLogged: false})}>Sair</span>{" "}
+            </h3>
+          )}
+
+          <Cart openCart={openCart} />
         </div>
+
         <nav className={burger ? "active" : ""}>
           <ul>
             <h3>Paginas</h3>
@@ -636,9 +670,13 @@ const Header = () => {
             <li>
               <NavLink to="/categorias">Categorias</NavLink>
             </li>
-            <li>
-              <NavLink to="/meus-pedidos">Meus Pedidos</NavLink>
-            </li>
+            {
+              userInfo.isLogged && (
+              <li>
+                <NavLink to="/myorders">Meus Pedidos</NavLink>
+              </li>
+              )
+            }
           </ul>
         </nav>
       </ContainerHeader>

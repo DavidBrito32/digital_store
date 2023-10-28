@@ -3,66 +3,52 @@ import { styled } from "styled-components";
 import tenis1 from "./assets/Caroussel/Tenis1.png";
 import tenis2 from "./assets/Caroussel/Tenis2.png";
 import tenis3 from "./assets/Caroussel/Tenis3.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Caroussel = () => {
   const [itemAtivo, setItemAtivo] = useState(0);
+  const [banners, setBanners] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const banners = [
-    {
-      supTitle: "Melhores ofertas personalizadas",
-      title: "Queima de estoque Nike",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aspernatur suscipit, eveniet officia.",
-      buttonText: "Ver ofertas",
-      image: tenis1,
-    },
-    {
-      supTitle: "Melhores ofertas personalizadas",
-      title: "Leve o seu agora",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aspernatur suscipit, eveniet officia.",
-      buttonText: "Ver ofertas",
-      image: tenis2,
-    },
-    {
-      supTitle: "Melhores ofertas personalizadas",
-      title: "Melhor de todos",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aspernatur suscipit, eveniet officia.",
-      buttonText: "Ver ofertas",
-      image: tenis3,
-    },
-    {
-      supTitle: "Melhores ofertas personalizadas",
-      title: "Melhor de todos",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aspernatur suscipit, eveniet officia.",
-      buttonText: "Ver ofertas",
-      image: tenis3,
-    },
-    {
-      supTitle: "Melhores ofertas personalizadas",
-      title: "Melhor de todos",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aspernatur suscipit, eveniet officia.",
-      buttonText: "Ver ofertas",
-      image: tenis3,
-    },
-    {
-      supTitle: "Melhores ofertas personalizadas",
-      title: "Melhor de todos",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aspernatur suscipit, eveniet officia.",
-      buttonText: "Ver ofertas",
-      image: tenis3,
-    },
-  ];
+  const getData = async () => {
+    setIsLoading(true)
+    // await fetch(`http://localhost:3000/banners`)
+    // .then((response) => response.json())
+    // .then((result) => setBanners(result))
+    // .catch (e => {
+    //   console.log(`DEU ERRO ${e.response}`);
+    // })
+    // .finally(()=>{
+    //   setIsLoading(false)
+    // })
+    try{
+      const request = await fetch(`http://localhost:3000/banners`);
+      setBanners(await request.json());
+    }catch (e){
+      console.log(e.response);
+    }
+
+    setIsLoading(false)
+  }
+  useEffect(()=>{
+    getData();
+  },[])
+
+  const alteraImage = (image) => {
+    if(image === "tenis1"){
+      return tenis1;
+    }else if(image === "tenis2"){
+      return tenis2
+    }else if(image === "tenis3"){
+      return tenis3
+    }
+  }
 
   return (
     <>
       <CarousselContainer>
         <CarousselItems $slide={itemAtivo} $largura={banners.length}>
+          {isLoading && <p>carregando dados...</p>}
           {banners.map((banner, index) => (
               <CarousselItem key={index}>
                 <CarousselContent>
@@ -78,7 +64,7 @@ const Caroussel = () => {
 
                   <CarousselButton>{banner.buttonText}</CarousselButton>
                 </CarousselContent>
-                <CarousselImage src={banner.image} />
+                <CarousselImage src={alteraImage(banner.image)} />
               </CarousselItem>
           ))}
         </CarousselItems>
