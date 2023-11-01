@@ -12,22 +12,12 @@ const Caroussel = () => {
 
   const getData = async () => {
     setIsLoading(true)
-    // await fetch(`http://localhost:3000/banners`)
-    // .then((response) => response.json())
-    // .then((result) => setBanners(result))
-    // .catch (e => {
-    //   console.log(`DEU ERRO ${e.response}`);
-    // })
-    // .finally(()=>{
-    //   setIsLoading(false)
-    // })
     try{
       const request = await fetch(`http://localhost:3000/banners`);
       setBanners(await request.json());
     }catch (e){
       console.log(e.response);
     }
-
     setIsLoading(false)
   }
   useEffect(()=>{
@@ -55,13 +45,10 @@ const Caroussel = () => {
                   <CarousselSupTitle>
                     {banner.supTitle}
                   </CarousselSupTitle>
-
                   <CarousselTitle>{banner.title}</CarousselTitle>
-
                   <CarousselDescription>
                     {banner.description}
                   </CarousselDescription>
-
                   <CarousselButton>{banner.buttonText}</CarousselButton>
                 </CarousselContent>
                 <CarousselImage src={alteraImage(banner.image)} />
@@ -125,10 +112,7 @@ const CarousselItem = styled.div`
   
     @media only screen and (min-width: 480px) and (max-width: 768px) {
     padding: 0 10px;
-  }
-
-
-  
+  }  
 `;
 
 const CarousselContent = styled.div`
